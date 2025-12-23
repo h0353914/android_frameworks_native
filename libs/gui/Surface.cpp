@@ -77,6 +77,9 @@ bool isInterceptorRegistrationOp(int op) {
 
 } // namespace
 
+Surface::Surface(const sp<IGraphicBufferProducer>& bufferProducer, bool controlledByApp)
+      : Surface(bufferProducer, controlledByApp, /*surfaceControlHandle*/ nullptr) {}
+
 Surface::Surface(const sp<IGraphicBufferProducer>& bufferProducer, bool controlledByApp,
                  const sp<IBinder>& surfaceControlHandle)
       : mGraphicBufferProducer(bufferProducer),
